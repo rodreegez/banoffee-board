@@ -7,6 +7,7 @@ app = proc do |env|
   when "/"
     hostname = ENV["HOSTNAME"] || `hostname`.strip
     version  = ENV["APP_VERSION"] || "dev"
+    repo_url = ENV["REPO_URL"] || "https://github.com"
     now      = Time.now.utc.strftime("%Y-%m-%d %H:%M:%S UTC")
 
     body = <<~HTML
@@ -52,7 +53,7 @@ app = proc do |env|
             <h2>Links</h2>
             <ul>
               <li><a href="/up">Health check</a></li>
-              <li><a href="https://github.com/">GitHub</a></li>
+              <li><a href="#{repo_url}">GitHub repo</a></li>
             </ul>
           </div>
         </body>
