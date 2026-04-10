@@ -200,6 +200,7 @@ def page(stats)
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="refresh" content="#{REFRESH_SECONDS}">
         <title>Banoffee Board</title>
+        <script defer src="https://umami.rodreegez.com/script.js" data-website-id="20aa1669-0032-4884-b8c8-12df700aaff7"></script>
         <style>
           :root {
             --bg: #020703;
