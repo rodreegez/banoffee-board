@@ -165,7 +165,8 @@ end
 
 def collect_stats
   now = Time.now.utc
-  hostname = ENV["HOSTNAME"] || `hostname`.strip
+  raw_hostname = ENV["DISPLAY_HOSTNAME"] || ENV["HOSTNAME"] || `hostname`.strip
+  hostname = raw_hostname.to_s.strip.split(".").first.to_s
   version = ENV["APP_VERSION"] || "dev"
 
   {
